@@ -11,7 +11,7 @@ import type { ActionMeta, Decoration, Row } from "../types.ts";
 
 function Chip({ decoration }: { decoration: Decoration }) {
   return (
-    <span className={"sb-nav-chip " + (decoration.cssClass ?? "")}>
+    <span className={`sb-nav-chip ${decoration.cssClass ?? ""}`}>
       {decoration.text ?? decoration.icon}
     </span>
   );

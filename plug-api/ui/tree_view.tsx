@@ -14,7 +14,7 @@ const DRAG_MIME = "application/x-sb-nav-path";
 
 function Chip({ decoration }: { decoration: Decoration }) {
   return (
-    <span class={"sb-nav-chip " + (decoration.cssClass ?? "")}>
+    <span class={`sb-nav-chip ${decoration.cssClass ?? ""}`}>
       {decoration.text ?? decoration.icon}
     </span>
   );
@@ -208,7 +208,7 @@ export function TreeView({
     <ul
       ref={treeRef}
       role="tree"
-      class={"sb-tree" + (dropTarget === "" ? " sb-nav-droptarget" : "")}
+      class={`sb-tree${dropTarget === "" ? " sb-nav-droptarget" : ""}`}
       // Delegated: one set of listeners for the whole tree, and the row a
       // drop resolves to isn't always the row under the pointer anyway.
       onDragStart={canDrag ? onDragStart : undefined}

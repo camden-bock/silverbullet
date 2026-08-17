@@ -59,7 +59,7 @@ export function SegmentedControl({
         ref={barRef}
         role="radiogroup"
         aria-label={ariaLabel}
-        class={"sb-segments" + (narrow ? " sb-segments-narrow" : "")}
+        class={`sb-segments${narrow ? " sb-segments-narrow" : ""}`}
       >
         {items.map((item, index) => (
           <button

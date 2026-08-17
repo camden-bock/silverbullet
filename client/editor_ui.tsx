@@ -645,7 +645,7 @@ export class MainUI {
         {(viewState.panels.modal.mode !== undefined ||
           keyedModalPanels.length > 0) && (
           <div
-            className={"sb-modal-backdrop" + (modalVisible ? "" : " sb-hidden")}
+            className={`sb-modal-backdrop${modalVisible ? "" : " sb-hidden"}`}
             onClick={(ev) => {
               // Only a click on the backdrop itself, and only for keyed panels
               // — keyless modal panels keep their click-through behavior.
@@ -696,7 +696,7 @@ export class MainUI {
               {keyedModalPanels.map((p) => (
                 <div
                   key={p.key}
-                  className={"sb-keyed-panel" + (p.hidden ? " sb-hidden" : "")}
+                  className={`sb-keyed-panel${p.hidden ? " sb-hidden" : ""}`}
                   style={{ flex: p.mode }}
                 >
                   <Panel config={p} editor={client} slot="modal" />
@@ -707,14 +707,14 @@ export class MainUI {
         )}
         {(viewState.panels.bhs.mode !== undefined ||
           keyedBhsPanels.length > 0) && (
-          <div className={"sb-bhs" + (bhsVisible ? "" : " sb-hidden")}>
+          <div className={`sb-bhs${bhsVisible ? "" : " sb-hidden"}`}>
             {viewState.panels.bhs.mode !== undefined && (
               <Panel config={viewState.panels.bhs} editor={client} slot="bhs" />
             )}
             {keyedBhsPanels.map((p) => (
               <div
                 key={p.key}
-                className={"sb-keyed-panel" + (p.hidden ? " sb-hidden" : "")}
+                className={`sb-keyed-panel${p.hidden ? " sb-hidden" : ""}`}
                 style={{ flex: p.mode }}
               >
                 <Panel config={p} editor={client} slot="bhs" />
